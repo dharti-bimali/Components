@@ -1,0 +1,55 @@
+.buttonContainer{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.btn a{
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    border-radius:30px ;
+    background-size: 400%;
+    z-index: 1;
+}
+.btn a:hover{
+    animation: animate 8s linear infinite;
+}
+@keyframes animate{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+.btn a::before{
+    content: '';
+    position: absolute;
+    top:- 5px;
+    right:-5px ;
+    left: -5px;
+    bottom: -5px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    z-index: -1;
+    border-radius: 40px;
+    background-size: 400%;
+    transition: -5s;
+}
+.btn a :hover::before{
+    filter: blur();
+   opacity:1;
+   animation: animate 8s linear infinite
+
+}
